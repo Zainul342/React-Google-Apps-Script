@@ -4324,10 +4324,10 @@ fuzzy@^0.1.3:
   resolved "https://registry.yarnpkg.com/fuzzy/-/fuzzy-0.1.3.tgz#4c76ec2ff0ac1a36a9dccf9a00df8623078d4ed8"
   integrity sha512-/gZffu4ykarLrCiP3Ygsa86UAo1E5vEVlvTrpkKywXSbP9Xhln3oSp9QSV57gEq3JFFpGJ4GZ+5zdEp3FcUh4w==
 
-gas-client@^1.2.0:
-  version "1.2.0"
-  resolved "https://registry.yarnpkg.com/gas-client/-/gas-client-1.2.0.tgz#67d396bbb9908c4e4bdb4c3d74bd741214febbfd"
-  integrity sha512-w5SMVUr7a6wGXc9R06u7y8XR9N41/EOqPjbP44oX7LgiqKTUvoK73xqNMwEDNV+cCdQQT3hzxbZM7BlPIW7F8w==
+gas-client@1.2.1:
+  version "1.2.1"
+  resolved "https://registry.yarnpkg.com/gas-client/-/gas-client-1.2.1.tgz#ff258247b3d54c2e195f05098a736cb5160cb571"
+  integrity sha512-+ApPQ2DaimtmG9dNRR/+uAOzVsYzlGJI+6zqWvsWH7k1hU3ui8+LQQouRcZwRqUt8auk8ctoK2e6L7kthOvETA==
   dependencies:
     uuid "^9.0.0"
 
