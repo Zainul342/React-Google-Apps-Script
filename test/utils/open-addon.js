@@ -1,7 +1,7 @@
 export const openAddon = async (page) => {
   await page.goto(process.env.SHEET_URL);
 
-  await page.waitForTimeout(30000); // pause for 5 seconds
+  await page.waitForSelector('a[aria-label="Sign in"]');
 
   // Create directory for screenshots if it doesn't exist
   const fs = await import('fs');
@@ -13,9 +13,9 @@ export const openAddon = async (page) => {
 
   // take screenshot
   await page.screenshot({
-    path: path.join(screenshotDir, 'main-spreadsheet-page.png'),
+    path: path.join(screenshotDir, `main-spreadsheet-page-${Date.now()}.png`),
   });
-  await page.click('a:nth-child(2)'); // click on signin button
+  await page.click('a[aria-label="Sign in"]'); // click on signin button
 
   await page.waitForSelector('input[name="identifier"]', { visible: true });
   await page.type('input[name="identifier"]', process.env.EMAIL); // type email

@@ -80,7 +80,7 @@
     "postcss": "^8.4.38",
     "postcss-preset-env": "^9.5.4",
     "prettier": "^2.7.0",
-    "puppeteer": "^14.3.0",
+    "puppeteer": "19.11.1",
     "puppeteer-extra": "^3.2.3",
     "puppeteer-extra-plugin-stealth": "^2.9.0",
     "rollup": "^4.18.0",
