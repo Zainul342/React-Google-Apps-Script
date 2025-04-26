@@ -17,6 +17,11 @@ export const openAddon = async (page) => {
   });
   await page.click('a[aria-label="Sign in"]'); // click on signin button
 
+  // take screenshot
+  await page.screenshot({
+    path: path.join(screenshotDir, `first-signin-page-${Date.now()}.png`),
+  });
+
   await page.waitForSelector('input[name="identifier"]', { visible: true });
   await page.type('input[name="identifier"]', process.env.EMAIL); // type email
   await page.click('#identifierNext'); // click "next" button
