@@ -51,6 +51,8 @@
   "devDependencies": {
     "@babel/preset-env": "^7.24.6",
     "@google/clasp": "^3.2.0",
+    "@swc/core": "^1.15.11",
+    "@swc/jest": "^0.2.39",
     "@types/expect-puppeteer": "^5.0.0",
     "@types/jest-environment-puppeteer": "^5.0.2",
     "@types/node": "^20.11.30",

@@ -1,13 +1,43 @@
 export const onOpen = () => {
+  // Initialize Database Tabs
+  initializeDatabase();
+
+  // Initialize/Refresh Sheet Dashboard
+  setupSheetDashboard();
+  
+  // Set Dashboard as active
+  const dashboard = SpreadsheetApp.getActiveSpreadsheet().getSheetByName('Harmony Dashboard');
+  if (dashboard) dashboard.activate();
+
+  // Verify and restore critical formulas
+  checkAndRestoreIntegrity();
+
+  // Detect and flag user absence
+  checkAndFlagAbsence();
+
   const menu = SpreadsheetApp.getUi()
-    .createMenu('My Sample React Project') // edit me!
-    .addItem('Sheet Editor', 'openDialog')
-    .addItem('Sheet Editor (Bootstrap)', 'openDialogBootstrap')
-    .addItem('Sheet Editor (MUI)', 'openDialogMUI')
-    .addItem('Sheet Editor (Tailwind CSS)', 'openDialogTailwindCSS')
-    .addItem('About me', 'openAboutSidebar');
+    .createMenu('Harmony Tracker')
+    .addItem('Harmony Dashboard', 'openAboutSidebar')
+    .addItem('Refresh Sheet View', 'refreshSheetDashboard')
+    .addSeparator()
+    .addItem('🛠️ Generate Demo Data', 'generateSampleData')
+    .addSeparator()
+    .addItem('Repair Formulas', 'runRepair')
+    .addItem('Technical Settings', 'openDialog');
 
   menu.addToUi();
+
+  // Auto-launch Onboarding for first-time users
+  if (isFirstTimeUser()) {
+    openOnboarding();
+  }
+};
+
+export const openOnboarding = () => {
+  const html = HtmlService.createHtmlOutputFromFile('onboarding')
+    .setTitle('Harmony Onboarding')
+    .setXFrameOptionsMode(HtmlService.XFrameOptionsMode.ALLOWALL);
+  SpreadsheetApp.getUi().showSidebar(html);
 };
 
 export const openDialog = () => {

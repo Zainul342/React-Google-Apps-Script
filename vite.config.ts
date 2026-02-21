@@ -40,6 +40,11 @@ const clientEntrypoints = [
     filename: 'sidebar-about-page',
     template: 'sidebar-about-page/index.html',
   },
+  {
+    name: 'CLIENT - Onboarding',
+    filename: 'onboarding',
+    template: 'onboarding/index.html',
+  },
 ];
 
 const keyPath = resolve(__dirname, './certs/key.pem');
@@ -92,31 +97,10 @@ const clientBuildConfig = ({
       emptyOutDir: true,
       minify: true,
       rollupOptions: {
-        external: [
-          'react',
-          'react-dom',
-          'react-transition-group',
-          'react-bootstrap',
-          '@mui/material',
-          '@emotion/react',
-          '@emotion/styled',
-          'gas-client',
-          '@types/react',
-        ],
+        external: [],
         output: {
-          format: 'iife', // needed to use globals from UMD builds
+          format: 'iife', 
           dir: outDir,
-          globals: {
-            react: 'React',
-            'react-dom': 'ReactDOM',
-            'react-transition-group': 'ReactTransitionGroup',
-            'react-bootstrap': 'ReactBootstrap',
-            '@mui/material': 'MaterialUI',
-            '@emotion/react': 'emotionReact',
-            '@emotion/styled': 'emotionStyled',
-            'gas-client': 'GASClient',
-            '@types/react': '@types/react',
-          },
         },
         input: resolve(__dirname, clientRoot, template),
       },
